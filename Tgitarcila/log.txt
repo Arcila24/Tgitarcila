@@ -1,0 +1,458 @@
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop
+$ git ini Tgitarcila
+git: 'ini' is not a git command. See 'git --help'.
+
+The most similar commands are
+        init
+        gui
+        init-db
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop
+$ git init Tgitarcila
+Initialized empty Git repository in C:/Users/Arcila24/Desktop/Tgitarcila/.git/
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop
+$ cd Tgitarcila/
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git config --global user.name "Arcila24"
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git config --global user.email "brayan-arcila@hotmail.com"
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git ckeckout -b feature
+git: 'ckeckout' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git checkout -b feature
+Switched to a new branch 'feature'
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ echo "Texto inicial > archivo.txt"
+Texto inicial > archivo.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ git add archivo.txt
+fatal: pathspec 'archivo.txt' did not match any files
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ echo "Texto inicial" > archivo.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ git add archivo.txt
+warning: in the working copy of 'archivo.txt', LF will be replaced by CRLF the n
+ext time Git touches it
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ git commit -m "Commit inicial"
+[feature (root-commit) c34b86a] Commit inicial
+ 1 file changed, 1 insertion(+)
+ create mode 100644 archivo.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ echo "Texto agregado en feature" >> archivo.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ git commit -am "Segundo commit en feature"
+warning: in the working copy of 'archivo.txt', LF will be replaced by CRLF the n
+ext time Git touches it
+[feature df8717d] Segundo commit en feature
+ 1 file changed, 1 insertion(+)
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ echo "Mas cambios en feature" >> archivo.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ git commit -am "Tercer commit en feature"
+warning: in the working copy of 'archivo.txt', LF will be replaced by CRLF the n
+ext time Git touches it
+[feature edca787] Tercer commit en feature
+ 1 file changed, 1 insertion(+)
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ git branch
+* feature
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ git switch master
+fatal: invalid reference: master
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ git checkout -b master
+Switched to a new branch 'master'
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git branch
+  feature
+* master
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git merge feature
+Already up to date.
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git reset --hard HEAD~1
+HEAD is now at df8717d Segundo commit en feature
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git rebase feature
+Successfully rebased and updated refs/heads/master.
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git checkout -b hotfix
+Switched to a new branch 'hotfix'
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (hotfix)
+$ echo "Corrección urgente" >> archivo.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (hotfix)
+$ git commit -am "Hotfix"
+warning: in the working copy of 'archivo.txt', LF will be replaced by CRLF the n
+ext time Git touches it
+[hotfix d3b523b] Hotfix
+ 1 file changed, 1 insertion(+)
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (hotfix)
+$ git checkout master
+Switched to branch 'master'
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git cherry-pick hotfix
+[master 6f90978] Hotfix
+ Date: Thu Oct 3 22:04:16 2024 -0500
+ 1 file changed, 1 insertion(+)
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git reflog
+6f90978 (HEAD -> master) HEAD@{0}: cherry-pick: Hotfix
+edca787 (feature) HEAD@{1}: checkout: moving from hotfix to master
+d3b523b (hotfix) HEAD@{2}: commit: Hotfix
+edca787 (feature) HEAD@{3}: checkout: moving from master to hotfix
+edca787 (feature) HEAD@{4}: rebase (finish): returning to refs/heads/master
+edca787 (feature) HEAD@{5}: rebase (start): checkout feature
+df8717d HEAD@{6}: reset: moving to HEAD~1
+edca787 (feature) HEAD@{7}: checkout: moving from feature to master
+edca787 (feature) HEAD@{8}: commit: Tercer commit en feature
+df8717d HEAD@{9}: commit: Segundo commit en feature
+c34b86a HEAD@{10}: commit (initial): Commit inicial
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git checkout HEAD@{9}
+Note: switching to 'HEAD@{9}'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at df8717d Segundo commit en feature
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila ((df8717d...))
+$ git reflog
+df8717d (HEAD) HEAD@{0}: checkout: moving from master to HEAD@{9}
+6f90978 (master) HEAD@{1}: cherry-pick: Hotfix
+edca787 (feature) HEAD@{2}: checkout: moving from hotfix to master
+d3b523b (hotfix) HEAD@{3}: commit: Hotfix
+edca787 (feature) HEAD@{4}: checkout: moving from master to hotfix
+edca787 (feature) HEAD@{5}: rebase (finish): returning to refs/heads/master
+edca787 (feature) HEAD@{6}: rebase (start): checkout feature
+df8717d (HEAD) HEAD@{7}: reset: moving to HEAD~1
+edca787 (feature) HEAD@{8}: checkout: moving from feature to master
+edca787 (feature) HEAD@{9}: commit: Tercer commit en feature
+df8717d (HEAD) HEAD@{10}: commit: Segundo commit en feature
+c34b86a HEAD@{11}: commit (initial): Commit inicial
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila ((df8717d...))
+$ git checkout feature
+Previous HEAD position was df8717d Segundo commit en feature
+Switched to branch 'feature'
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ echo "Cambio en feature > confilicto.txt
+> ^C
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ echo "Cambio en feature" > confilicto.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ git commit -am "Cambio en feature"
+On branch feature
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        confilicto.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ git checkout master
+Switched to branch 'master'
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ echo "Cambio en master" > confilicto.tx
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git commit -am "Cambio en master"
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        confilicto.tx
+        confilicto.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git merge feature
+Already up to date.
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git add conflicto.txt
+fatal: pathspec 'conflicto.txt' did not match any files
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git add confilicto.txt
+warning: in the working copy of 'confilicto.txt', LF will be replaced by CRLF th
+e next time Git touches it
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git commit -m "Cambio en master"
+[master 4d1f493] Cambio en master
+ 1 file changed, 1 insertion(+)
+ create mode 100644 confilicto.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git merge feature
+Already up to date.
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git checkout merge
+error: pathspec 'merge' did not match any file(s) known to git
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git checkout feature
+Switched to branch 'feature'
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ echo "Cambio en feature" > conflicto.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ git add conflicto.txt
+warning: in the working copy of 'conflicto.txt', LF will be replaced by CRLF the
+ next time Git touches it
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ git commit -m "Cambio en feature"
+[feature 126b050] Cambio en feature
+ 1 file changed, 1 insertion(+)
+ create mode 100644 conflicto.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ git checkout master
+Switched to branch 'master'
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ echo "Cambio en master" > conflicto.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git add conflicto.txt
+warning: in the working copy of 'conflicto.txt', LF will be replaced by CRLF the
+ next time Git touches it
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git commit -m "Cambio en master"
+[master add4bf0] Cambio en master
+ 1 file changed, 1 insertion(+)
+ create mode 100644 conflicto.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git merge feature
+Auto-merging conflicto.txt
+CONFLICT (add/add): Merge conflict in conflicto.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both added:      conflicto.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        confilicto.tx
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master|MERGING)
+$ code conflicto.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master|MERGING)
+$ git add conflicto.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master|MERGING)
+$ git commit -m "Solucion conflicto en conflicto.txt"
+[master b160f4a] Solucion conflicto en conflicto.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        confilicto.tx
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ rm confilicto.tx
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git checkout feature
+Switched to branch 'feature'
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ git status
+On branch feature
+nothing to commit, working tree clean
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (feature)
+$ git checkout master
+Switched to branch 'master'
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ ls
+archivo.txt  confilicto.txt  conflicto.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ rm confilicto.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ ls
+archivo.txt  conflicto.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    confilicto.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git add .
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    confilicto.txt
+
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git commit -m "Eliminando archivo innecesario o renombrando archivos"
+[master 4e835a9] Eliminando archivo innecesario o renombrando archivos
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 confilicto.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ ls
+archivo.txt  conflicto.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ history > TallerGit.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ ls
+TallerGit.txt  archivo.txt  conflicto.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ rm TallerGit.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ ls
+archivo.txt  conflicto.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ touch README.md
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ code README.md
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git add README.md
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git commit -m "Agregando archivo README.md con documentacion de pasos"
+[master 782c86d] Agregando archivo README.md con documentacion de pasos
+ 1 file changed, 22 insertions(+)
+ create mode 100644 README.md
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ ls
+README.md  archivo.txt  conflicto.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ touch log.txt
+
+Arcila24@DESKTOP-DTIMPR7 MINGW64 ~/Desktop/Tgitarcila (master)
+$ code log.txt
